@@ -1,4 +1,0 @@
-enum SwitchState {
-  ON,
-  OFF
-}
