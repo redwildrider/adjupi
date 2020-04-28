@@ -75,7 +75,6 @@ cd
 mkdir dev
 cd dev
 git clone https://github.com/bishoph/sopare.git
-git clone https://github.com/bishoph/sopare.git
 cd sopare
 mkdir tokens
 mkdir samples
@@ -96,8 +95,8 @@ Adjust sopare configuration:
 [Optionally] Vaporize trained data again:
 
 ```
-   49  rm dict/*.raw
-   50  ./sopare.py -d "*"
+rm dict/*.raw
+./sopare.py -d "*"
 ```
 
 Raspotify
@@ -177,6 +176,15 @@ WantedBy=multi-user.target
 sudo systemctl enable zigbee2mqtt.service
 ```
 
-AdjuPi
+Adjupi
 ======
 
+First copy all files to device.
+```
+sudo apt install python3-pip
+pip3 install -r requirements.txt
+sudo nano /usr/local/lib/python3.7/dist-packages/flask_restplus/fields.py
+# change werkzeug to werkzeug.utils
+```
+
+Finished! :)

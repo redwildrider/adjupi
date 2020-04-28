@@ -1,0 +1,30 @@
+{
+  "devices":
+  [
+    {
+      "name": "Eck",
+      "id": "0x7cb03eaa0a013f10",
+      "type": "switch"
+    },
+    {
+      "name": "Desk-Lamp",
+      "id": "0x7cb03eaa00b1a173",
+      "type": "switch"
+    },
+    {
+      "name": "Desktop",
+      "id": "0x84182600000d7f89",
+      "type": "switch"
+    },
+    {
+      "name": "Lamp-Windows",
+      "id": "0x00158d0002eff3f6",
+      "type": "bulb"
+    },
+    {
+      "name": "Lamp-Walls",
+      "id": "0x00158d0002effa6c",
+      "type": "bulb"
+    }
+  ]
+}
