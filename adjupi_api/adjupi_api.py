@@ -26,15 +26,14 @@ class MainRoute(Resource):
         }
 
 
-@swagger_api.route('/switch_<string:command>')
+@swagger_api.route('/switch_<string:command>_<string:id>')
 class SwitchRoute(Resource):
 
-    def get(self, command):
+    def get(self, command, id):
         """sets switch on or off and return success or failure"""
         print(f"Route '/switch_{command}' has been requested.")
-        client.publish('zigbee2mqtt/0x84182600000d7f89/set/state', command.upper())
+        client.publish(f'zigbee2mqtt/{id}/set/state', command.upper())
         return {'status': 'test successful'}
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False)  # starts development server
