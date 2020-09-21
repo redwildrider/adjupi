@@ -180,3 +180,37 @@ sudo systemctl enable zigbee2mqtt.service
 AdjuPi
 ======
 
+You must copy the files from adjupi_api to the raspberry pi first.
+
+```
+sudo apt install python3-pip
+sudo pip3 install -r requirements.txt
+```
+
+
+
+RUBBISH
+=======
+
+```sudo nano /lib/systemd/system/sopare.service```
+
+```
+[Unit]
+Description=Sopare Service
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /usr/bin/sopare.py -l
+StandardInput=tty-force
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+mv sopare.py /usr/bin/
+mv sopare /usr/bin/
+sudo systemctl enable sopare.service
+sudo systemctl restart sopare.service
+```
